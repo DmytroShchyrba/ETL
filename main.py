@@ -15,14 +15,13 @@ import linear_assignment
 # Initialize the object tracker
 tracker = DeepSort(max_age=5) #If there is no detections on 5 frames in a row, the object is lost 
 object_detector = Detection()
-embedder = YourEmbedder()  # Replace with your own embedder, we need embedder 
-
+# Replace with your own embedder, we need embedder
+treashold = 0.5  # Set a threshold to accept the association
 # Initialize the Kalman filter
-kalman_filter = KalmanFilter(dim_x=4, dim_z=2)
 #Set up the parameters for the Kalman filter (state transition matrix, measurement matrix)
 
 # Start the video capture
-video_capture = cv2.VideoCapture(0)  # 0 - camera source
+video_capture = cv2.VideoCapture(r"C:\Users\dimas\Downloads\traffic_-_27260 (360p).mp4") # 0 - camera source
 
 while True:
     ret, frame = video_capture.read()
@@ -56,7 +55,7 @@ while True:
 
         row_ind, col_ind = linear_assignment(-iou_matrix)
         for i, j in zip(row_ind, col_ind):
-            if iou_matrix[i, j] > threshold:  # Set a threshold to accept the association
+            if iou_matrix[i, j] > treshold:  # Set a threshold to accept the association
                 matched_bb = bbs[i]
                 matched_track = tracker.tracks[j]
                 # Update the Kalman filter with the matched detection

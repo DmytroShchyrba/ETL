@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ETL.iml" filepath="$PROJECT_DIR$/.idea/ETL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../WaymoOpenDatasetToolKit/.idea/WaymoOpenDatasetToolKit.iml" filepath="$PROJECT_DIR$/../WaymoOpenDatasetToolKit/.idea/WaymoOpenDatasetToolKit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../midi-internship/.idea/midi-internship.iml" filepath="$PROJECT_DIR$/../midi-internship/.idea/midi-internship.iml" />
     </modules>
   </component>
 </project>
